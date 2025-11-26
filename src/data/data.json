@@ -1,0 +1,233 @@
+{
+    "revenue": {
+        "monthly": [
+            {
+                "month": "Jan",
+                "euros": 65000
+            },
+            {
+                "month": "Feb",
+                "euros": 59000
+            },
+            {
+                "month": "Mar",
+                "euros": 80000
+            },
+            {
+                "month": "Apr",
+                "euros": 81000
+            },
+            {
+                "month": "May",
+                "euros": 56000
+            },
+            {
+                "month": "Jun",
+                "euros": 55000
+            },
+            {
+                "month": "Jul",
+                "euros": 40000
+            },
+            {
+                "month": "Aug",
+                "euros": 72000
+            },
+            {
+                "month": "Sep",
+                "euros": 95000
+            },
+            {
+                "month": "Oct",
+                "euros": 110000
+            },
+            {
+                "month": "Nov",
+                "euros": 105000
+            },
+            {
+                "month": "Dec",
+                "euros": 130000
+            }
+        ],
+        "yearly": [
+            {
+                "year": "2021",
+                "euros": 800000
+            },
+            {
+                "year": "2022",
+                "euros": 950000
+            },
+            {
+                "year": "2023",
+                "euros": 1100000
+            },
+            {
+                "year": "2024",
+                "euros": 1050000
+            },
+            {
+                "year": "2025",
+                "euros": 1400000
+            }
+        ]
+    },
+    "bills": {
+        "total": 1250,
+        "breakdown": [
+            {
+                "status": "completed",
+                "count": 850
+            },
+            {
+                "status": "pending",
+                "count": 200
+            },
+            {
+                "status": "processing",
+                "count": 150
+            },
+            {
+                "status": "canceled",
+                "count": 50
+            }
+        ]
+    },
+    "activeUsers": [
+        {
+            "month": "Jan",
+            "count": 4000
+        },
+        {
+            "month": "Feb",
+            "count": 3000
+        },
+        {
+            "month": "Mar",
+            "count": 2000
+        },
+        {
+            "month": "Apr",
+            "count": 2780
+        },
+        {
+            "month": "May",
+            "count": 1890
+        },
+        {
+            "month": "Jun",
+            "count": 2390
+        },
+        {
+            "month": "Jul",
+            "count": 3490
+        },
+        {
+            "month": "Aug",
+            "count": 4000
+        },
+        {
+            "month": "Sep",
+            "count": 4200
+        },
+        {
+            "month": "Oct",
+            "count": 4500
+        },
+        {
+            "month": "Nov",
+            "count": 4800
+        },
+        {
+            "month": "Dec",
+            "count": 5100
+        }
+    ],
+    "reports": [
+        {
+            "id": "report-8a92b",
+            "title": "Annual Financial Audit 2025",
+            "completed": false
+        },
+        {
+            "id": "report-7d41c",
+            "title": "Q3 VAT Return",
+            "completed": true
+        },
+        {
+            "id": "report-3f88e",
+            "title": "Employee Payroll Tax - Nov",
+            "completed": false
+        },
+        {
+            "id": "report-2b14a",
+            "title": "SOC2 Compliance Report",
+            "completed": false
+        },
+        {
+            "id": "report-9c55d",
+            "title": "Carbon Footprint Analysis",
+            "completed": false
+        }
+    ],
+    "documentation": [
+        {
+            "id": "doc-5x99z",
+            "title": "Vendor NDA Template",
+            "completed": false
+        },
+        {
+            "id": "doc-2w33y",
+            "title": "SLA - Enterprise Clients",
+            "completed": true
+        },
+        {
+            "id": "doc-8v77x",
+            "title": "Data Processing Agreement (DPA)",
+            "completed": false
+        },
+        {
+            "id": "doc-4u66w",
+            "title": "W-9 Forms 2025",
+            "completed": false
+        },
+        {
+            "id": "doc-1t55v",
+            "title": "Insurance Liability Certificate",
+            "completed": true
+        }
+    ],
+    "tasks": [
+        {
+            "id": "task-k192m",
+            "task": "Submit Q4 Tax Preview",
+            "date": "2025-12-01",
+            "urgency": "High"
+        },
+        {
+            "id": "task-j283n",
+            "task": "Renew AWS Reserved Instances",
+            "date": "2025-12-10",
+            "urgency": "Medium"
+        },
+        {
+            "id": "task-h374p",
+            "task": "Client Invoicing Cycle",
+            "date": "2025-12-15",
+            "urgency": "High"
+        },
+        {
+            "id": "task-g465q",
+            "task": "Update Privacy Policy",
+            "date": "2026-01-05",
+            "urgency": "Low"
+        },
+        {
+            "id": "task-f556r",
+            "task": "Annual Team Review",
+            "date": "2026-01-20",
+            "urgency": "Medium"
+        }
+    ]
+}
