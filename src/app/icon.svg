@@ -1,8 +1,9 @@
 <svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <linearGradient id="logo_gradient" x1="256" y1="0" x2="256" y2="512" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#1976d2" />
-      <stop offset="100%" stop-color="#10b981" />
+      <!-- Changed to White -> Bright Green to be visible on both Blue (Light) and Dark backgrounds -->
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#69f0ae" />
     </linearGradient>
   </defs>
   <g stroke="url(#logo_gradient)" stroke-width="32" stroke-linecap="round" stroke-linejoin="round">
