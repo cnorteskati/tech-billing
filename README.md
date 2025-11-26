@@ -1,6 +1,48 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Tech Billing Website
 
-## Getting Started
+- Product: website with modern frontend.
+- Objective: Present `Tech Billing`'s billing metrics and operational requirements.
+- Qualities: Visually appealing, easy navigation, good and interactive UX. 
+
+## Pages & Functionalities 
+
+- [ ] Billing Dashboard Page (with interactive graphs):
+  - [ ] Monthly and yearly Revenue.
+  - [ ] Number of emitted bills.
+  - [ ] Monthly active users.
+
+- [ ] Company Requirements Page (with **box checking** functionality):
+  - [ ] Mandatory reports (taxes, audits, ...).
+  - [ ] Necessary documentation for billing processing. 
+  - [ ] Important deadlines tracking.
+
+## Requirements & Constraints
+
+- [ ] Responsive website (Desktop, Tablet, Mobile).
+- [ ] Modular React (Component separation).
+- [ ] Use NextJS
+- [ ] \[Optional\] Use Tailwind
+- [ ] Use Hooks and ContextAPI (for global state).
+- [ ] Generate Mockup data for the company (simple JSON file or served from mock backend).
+- [ ] Appealing UI/UX (MUI, ...).
+- [ ] Good file structure.
+- [ ] Clean, well documented, and well named code.
+
+
+## Notes & Extras
+
+- [ ] The website should be focused on internal company users.
+- [ ] Create a Logo for the company and use in website.
+- [ ] Implement Dark/Light mode.
+- [ ] Provide good **SEO metadata** for the **pages** and **website**.
+- [ ] Optimize the balance between SSR and client side, to mantain good
+ user interactivity, SEO, and caching/speed (focus on what data changes regularly, ...).
+- [ ] Add sound to some interactions.
+- [ ] \[Optional\] Have some micro interactions, to keep the website engaging.
+- [ ] \[Optional\] Have graph data be dynamic, and have **WebHooks** to
+ notify/update it on the user side.
+
+## How to run
 
 First, run the development server:
 
@@ -16,10 +58,6 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
@@ -28,9 +66,3 @@ To learn more about Next.js, take a look at the following resources:
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
