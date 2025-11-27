@@ -2,8 +2,7 @@ import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import ThemeToggle from '@/components/ui/ThemeToggle';
-import Image from 'next/image';
-import logo from '@/app/icon.svg';
+import LogoLinkButton from '@/components/ui/LogoLinkButton';
 
 export default function TopBar() {
   return (
@@ -12,11 +11,7 @@ export default function TopBar() {
         <Toolbar className="flex justify-between">
           {/* Left Box */}
           <Box className="flex items-center-safe">
-            <Image
-              src={logo}
-              alt="Tech Billing Logo"
-              className="w-10 h-10 object-contain"
-            />
+            <LogoLinkButton />
             <h5 className="text-2xl ml-2">Tech Billing</h5>
           </Box>
 
