@@ -6,6 +6,10 @@ import { getActiveUsers, getBills, getRevenue } from '@/lib/data-access';
 import { Box } from '@mui/material';
 import NavCard from '@/components/ui/NavCard';
 import PageTitle from '@/components/ui/PageTitle';
+import { REPORTS_PAGE_DESCRIPTION } from '@/app/reports/page';
+
+export const HOME_PAGE_DESCRIPTION =
+  'Track data and analytics with an intuitive and simple visualization.';
 
 async function HomePage() {
   const [billsData, revenueData, activeUsersData] = await Promise.all([
@@ -16,10 +20,7 @@ async function HomePage() {
 
   return (
     <Box className="flex flex-col w-[80%] h-[80%]">
-      <PageTitle
-        title="Dashboard"
-        description="Track data and analytics with an intuitive and simple visualization."
-      />
+      <PageTitle title="Dashboard" description={HOME_PAGE_DESCRIPTION} />
 
       <Box className="grid grid-cols-7 grid-rows-8 gap-4 p-10 h-full">
         <Box className="col-span-4 row-span-4">
@@ -35,7 +36,7 @@ async function HomePage() {
           <NavCard
             href="/reports"
             title="Go to tasks!"
-            description="Check ongoing tasks, important deadlines and missing reports and documents."
+            description={REPORTS_PAGE_DESCRIPTION}
             icon={TaskIcon}
           />
         </Box>
