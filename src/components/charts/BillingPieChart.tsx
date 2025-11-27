@@ -54,7 +54,7 @@ export default function BillingPieChart({ data }: BillingPieChartProps) {
         },
       }}
     >
-      <PieCenterLabel>{total.toLocaleString()} Total</PieCenterLabel>
+      <PieCenterLabel>{total.toLocaleString()} Bills</PieCenterLabel>
     </PieChart>
   );
 }
