@@ -49,8 +49,8 @@ export default function BillingPieChart({ data }: BillingPieChartProps) {
       ]}
       slotProps={{
         legend: {
-          direction: 'horizontal',
-          position: { vertical: 'bottom', horizontal: 'center' },
+          direction: 'vertical',
+          position: { vertical: 'middle', horizontal: 'end' },
         },
       }}
     >

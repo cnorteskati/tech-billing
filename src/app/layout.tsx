@@ -33,7 +33,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Providers>
-          <Box className="flex flex-col min-h-screen">
+          <Box className="flex flex-col w-screen h-screen items-center">
             <TopBar />
             {children}
           </Box>

@@ -12,16 +12,16 @@ async function HomePage() {
   ]);
 
   return (
-    <Box className="flex flex-col">
-      <h2 className="mt-8 text-4xl text-center">Dashboard View</h2>
-      <Box className="grid grid-cols-4 grid-rows-4 gap-4 max-h-fit p-32">
-        <Box className="row-start-1 col-span-3">
+    <Box className="flex flex-col w-[80%] h-[80%]">
+      <h2 className="mt-8 text-4xl text-left">Dashboard View</h2>
+      <Box className="grid grid-cols-7 grid-rows-8 gap-4 p-10 h-full">
+        <Box className="col-span-4 row-span-4">
           <ActiveUsersBarChart data={activeUsersData} />
         </Box>
-        <Box className="row-start-1 col-span-1">
+        <Box className="col-span-3 row-span-4">
           <BillingPieChart data={billsData.breakdown} />
         </Box>
-        <Box className="row-start-2 col-span-4 row-span-2">
+        <Box className="col-span-5 row-span-5 ">
           <RevenueLineChart data={revenueData.monthly} />
         </Box>
       </Box>
