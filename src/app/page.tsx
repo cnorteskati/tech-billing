@@ -1,8 +1,10 @@
 import ActiveUsersBarChart from '@/components/charts/ActiveUsersBarChart';
 import BillingPieChart from '@/components/charts/BillingPieChart';
 import RevenueLineChart from '@/components/charts/RevenueLineChart';
+import TaskIcon from '@mui/icons-material/Task';
 import { getActiveUsers, getBills, getRevenue } from '@/lib/data-access';
 import { Box } from '@mui/material';
+import NavCard from '@/components/ui/NavCard';
 
 async function HomePage() {
   const [billsData, revenueData, activeUsersData] = await Promise.all([
@@ -23,6 +25,14 @@ async function HomePage() {
         </Box>
         <Box className="col-span-5 row-span-5 ">
           <RevenueLineChart data={revenueData.monthly} />
+        </Box>
+        <Box className="col-span-2 row-span-4">
+          <NavCard
+            href="/reports"
+            title="Go to tasks!"
+            description="Check ongoing tasks, important deadlines and missing reports and documents."
+            icon={TaskIcon}
+          />
         </Box>
       </Box>
     </Box>
