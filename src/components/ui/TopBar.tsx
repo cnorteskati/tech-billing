@@ -1,7 +1,7 @@
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
-import ThemeToggle from '@/components/ThemeToggle';
+import ThemeToggle from '@/components/ui/ThemeToggle';
 import Image from 'next/image';
 import logo from '@/app/icon.svg';
 

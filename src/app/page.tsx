@@ -1,5 +1,5 @@
-import BillingPieChart, { PieChartItem } from '@/components/BillingPieChart';
-import RevenueLineChart from '@/components/RevenueLineChart';
+import BillingPieChart, { PieChartItem } from '@/components/charts/BillingPieChart';
+import RevenueLineChart from '@/components/charts/RevenueLineChart';
 import { getBills, getRevenue } from '@/lib/data-access';
 import { capitalize } from '@/lib/utils';
 import { Box } from '@mui/material';

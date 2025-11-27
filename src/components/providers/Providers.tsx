@@ -3,7 +3,7 @@
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
 import { ThemeProvider as NextThemesProvider } from "next-themes";
 import { StyledEngineProvider } from "@mui/material/styles";
-import MUIThemeAdapter from "@/components/MUIThemeAdapter";
+import MUIThemeAdapter from "@/components/providers/MUIThemeAdapter";
 
 export default function Providers({ children }: { children: React.ReactNode }) {
     return (

@@ -1,4 +1,4 @@
-import PieCenterLabel from '@/components/PieCenterLabel';
+import PieCenterLabel from '@/components/charts/PieCenterLabel';
 import { PieChart } from '@mui/x-charts/PieChart';
 
 export type PieChartItem = {

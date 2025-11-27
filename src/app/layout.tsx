@@ -2,9 +2,9 @@ import './globals.css'; // Keep as first line. If there is an error on the impor
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 
-import Providers from '@/components/Providers';
+import Providers from '@/components/providers/Providers';
 import { Box } from '@mui/material';
-import TopBar from '@/components/TopBar';
+import TopBar from '@/components/ui/TopBar';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
