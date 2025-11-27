@@ -5,6 +5,7 @@ import TaskIcon from '@mui/icons-material/Task';
 import { getActiveUsers, getBills, getRevenue } from '@/lib/data-access';
 import { Box } from '@mui/material';
 import NavCard from '@/components/ui/NavCard';
+import PageTitle from '@/components/ui/PageTitle';
 
 async function HomePage() {
   const [billsData, revenueData, activeUsersData] = await Promise.all([
@@ -15,7 +16,11 @@ async function HomePage() {
 
   return (
     <Box className="flex flex-col w-[80%] h-[80%]">
-      <h2 className="mt-8 text-4xl text-left">Dashboard View</h2>
+      <PageTitle
+        title="Dashboard"
+        description="Track data and analytics with an intuitive and simple visualization."
+      />
+
       <Box className="grid grid-cols-7 grid-rows-8 gap-4 p-10 h-full">
         <Box className="col-span-4 row-span-4">
           <ActiveUsersBarChart data={activeUsersData} />
