@@ -7,9 +7,10 @@
 ## Pages & Functionalities 
 
 - [ ] Billing Dashboard Page (with interactive graphs):
-  - [ ] Monthly and yearly Revenue.
-  - [ ] Number of emitted bills.
-  - [ ] Monthly active users.
+  - [ ] Yearly  Revenue.
+  - [x] Monthly  Revenue.
+  - [x] Number of emitted bills.
+  - [x] Monthly active users.
 
 - [ ] Company Requirements Page (with **box checking** functionality):
   - [ ] Mandatory reports (taxes, audits, ...).
@@ -31,7 +32,7 @@
 
 ## Notes & Extras
 
-- [ ] The website should be focused on internal company users.
+- [x] The website should be focused on internal company users.
 - [x] Create a Logo for the company and use in website.
 - [x] Implement Dark/Light mode.
 - [ ] Provide good **SEO metadata** for the **pages** and **website**.
