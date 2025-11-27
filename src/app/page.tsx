@@ -19,20 +19,23 @@ async function HomePage() {
   ]);
 
   return (
-    <Box className="flex flex-col w-[80%] h-[80%]">
+    <Box className="flex flex-col w-full xl:w-[85%] h-auto xl:h-[90%] mx-auto p-4 md:p-10">
       <PageTitle title="Dashboard" description={HOME_PAGE_DESCRIPTION} />
 
-      <Box className="grid grid-cols-7 grid-rows-8 gap-4 p-10 h-full">
-        <Box className="col-span-4 row-span-4">
+      <Box className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-7 xl:grid-rows-8 gap-4 mt-8 h-full">
+        <Box className="col-span-1 xl:col-span-4 xl:row-span-4 min-h-[50vh] md:min-h-[40vh] xl:min-h-0">
           <ActiveUsersBarChart data={activeUsersData} />
         </Box>
-        <Box className="col-span-3 row-span-4">
+
+        <Box className="col-span-1 xl:col-span-3 xl:row-span-4 min-h-[50vh] md:min-h-[40vh] xl:min-h-0">
           <BillingPieChart data={billsData.breakdown} />
         </Box>
-        <Box className="col-span-5 row-span-5 ">
+
+        <Box className="col-span-1 md:col-span-1 xl:col-span-5 xl:row-span-4 min-h-[50vh] md:min-h-[40vh] xl:min-h-0">
           <RevenueLineChart data={revenueData.monthly} />
         </Box>
-        <Box className="col-span-2 row-span-4">
+
+        <Box className="col-span-1 xl:col-span-2 xl:row-span-4 min-h-[20vh] md:min-h-0 xl:min-h-0">
           <NavCard
             href="/reports"
             title="Go to tasks!"
