@@ -33,7 +33,7 @@ async function HomePage() {
       <h2 className="mt-8 text-4xl text-center">Dashboard View</h2>
       <Box className="grid grid-cols-4 grid-rows-4 gap-4 max-h-fit p-32">
         <Box className="row-start-1 col-start-1">
-          <BillingPieChart items={pieChartItems} />
+          <BillingPieChart data={billsData.breakdown} />
         </Box>
         <Box className="row-start-2 col-span-4 row-span-3">
           <RevenueLineChart data={revenueData.monthly} />

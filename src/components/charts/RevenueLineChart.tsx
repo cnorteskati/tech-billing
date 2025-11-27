@@ -3,17 +3,13 @@
 // TODO adapt to have a switch between Monthly and Yearly, right now only has Monthly
 
 import { Coordinates, formatEuros, mean, regression } from '@/lib/utils';
+import { MonthlyRevenue } from '@/types/companyData';
 
 import { LineChart } from '@mui/x-charts/LineChart';
 import { useMemo } from 'react';
 
-export type RevenueData = {
-  month: string;
-  euros: number;
-};
-
 type RevenueLineChartProps = {
-  data: RevenueData[];
+  data: MonthlyRevenue[];
 };
 
 export default function RevenueLineChart({ data }: RevenueLineChartProps) {
