@@ -6,8 +6,8 @@
 
 ## Pages & Functionalities 
 
-- [ ] Billing Dashboard Page (with interactive graphs):
-  - [ ] Yearly  Revenue.
+- [x] Billing Dashboard Page (with interactive graphs):
+  - [x] Yearly  Revenue.
   - [x] Monthly  Revenue.
   - [x] Number of emitted bills.
   - [x] Monthly active users.
@@ -16,7 +16,7 @@
   - [x] Mandatory reports (taxes, audits, ...).
   - [x] Necessary documentation for billing processing. 
   - [x] Important deadlines tracking.
-  - [ ] Preview a client invoice
+  - [x] Preview a client invoice
 
 ## Requirements & Constraints
 
