@@ -12,7 +12,7 @@
   - [x] Number of emitted bills.
   - [x] Monthly active users.
 
-- [ ] Company Requirements Page (with **box checking** functionality):
+- [x] Company Requirements Page (with **box checking** functionality):
   - [x] Mandatory reports (taxes, audits, ...).
   - [x] Necessary documentation for billing processing. 
   - [x] Important deadlines tracking.
@@ -40,7 +40,7 @@
 - [ ] Optimize the balance between SSR and client side, to mantain good
  user interactivity, SEO, and caching/speed (focus on what data changes regularly, ...).
 - [ ] Add sound to some interactions.
-- [ ] \[Optional\] Have some micro interactions, to keep the website engaging.
+- [x] \[Optional\] Have some micro interactions, to keep the website engaging.
 - [ ] \[Optional\] Have graph data be dynamic, and have **WebHooks** to
  notify/update it on the user side.
 
