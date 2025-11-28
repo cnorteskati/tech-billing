@@ -13,9 +13,9 @@
   - [x] Monthly active users.
 
 - [ ] Company Requirements Page (with **box checking** functionality):
-  - [ ] Mandatory reports (taxes, audits, ...).
-  - [ ] Necessary documentation for billing processing. 
-  - [ ] Important deadlines tracking.
+  - [x] Mandatory reports (taxes, audits, ...).
+  - [x] Necessary documentation for billing processing. 
+  - [x] Important deadlines tracking.
   - [ ] Preview a client invoice
 
 ## Requirements & Constraints
@@ -46,7 +46,7 @@
 
 ## How to run
 
-First, run the development server:
+Run the development server:
 
 ```bash
 npm run dev
