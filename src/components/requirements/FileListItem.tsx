@@ -1,3 +1,4 @@
+import { useSound } from '@/hooks/useSound';
 import { CheckCircle, TableChart, Description } from '@mui/icons-material';
 import { Box, useTheme, alpha } from '@mui/material';
 
@@ -9,6 +10,8 @@ interface FileListItemProps {
   onToggle: (id: string) => void;
 }
 
+const SUCCESS_SOUND_URL = '/sounds/success.wav';
+
 export default function FileListItem({
   id,
   title,
@@ -18,14 +21,23 @@ export default function FileListItem({
 }: FileListItemProps) {
   const theme = useTheme();
 
+  const playSuccess = useSound(SUCCESS_SOUND_URL);
+
   const colorKey = type === 'report' ? 'success' : 'info';
   const mainColor = theme.palette[colorKey].main;
 
   const BaseIcon = type === 'report' ? TableChart : Description;
 
+  const handleToggle = () => {
+    if (!completed) {
+      playSuccess();
+    }
+    onToggle(id);
+  };
+
   return (
     <Box
-      onClick={() => onToggle(id)}
+      onClick={handleToggle}
       className="group flex items-center p-4 mb-3 rounded-xl border shadow-sm cursor-pointer transition-[transform,box-shadow] duration-200 select-none"
       sx={{
         backgroundColor: completed

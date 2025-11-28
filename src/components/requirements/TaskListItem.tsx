@@ -1,3 +1,4 @@
+import { useSound } from '@/hooks/useSound';
 import { CalendarMonth, AccessTime } from '@mui/icons-material';
 import { Box, useTheme, alpha } from '@mui/material';
 
@@ -12,6 +13,8 @@ interface TaskItemProps {
   onToggle: (id: string) => void;
 }
 
+const SCRIBBLE_SOUND_URL = '/sounds/scribble.wav';
+
 export default function TaskItem({
   id,
   task,
@@ -21,6 +24,8 @@ export default function TaskItem({
   onToggle,
 }: TaskItemProps) {
   const theme = useTheme();
+
+  const playScribble = useSound(SCRIBBLE_SOUND_URL, { start: 0.5 , end: 1});
 
   // Map Urgency to Theme Palette colors
   const getUrgencyColor = (level: UrgencyLevel) => {
@@ -41,9 +46,16 @@ export default function TaskItem({
   const lightColor =
     'light' in urgencyPalette ? urgencyPalette.light : mainColor;
 
+  const handleToggle = () => {
+    if (!completed) {
+      playScribble();
+    }
+    onToggle(id);
+  };
+
   return (
     <Box
-      onClick={() => onToggle(id)}
+      onClick={handleToggle}
       className="relative overflow-hidden cursor-pointer group flex flex-col sm:flex-row sm:items-center justify-between p-4 mb-3 rounded-xl border transition-[transform,box-shadow,opacity] duration-300 select-none"
       sx={{
         backgroundColor: completed ? 'action.hover' : 'background.paper',
