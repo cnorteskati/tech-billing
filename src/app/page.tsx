@@ -32,7 +32,7 @@ async function HomePage() {
         </Box>
 
         <Box className="col-span-1 md:col-span-1 xl:col-span-5 xl:row-span-4 min-h-[50vh] md:min-h-[40vh] xl:min-h-0">
-          <RevenueLineChart data={revenueData.monthly} />
+          <RevenueLineChart data={revenueData} />
         </Box>
 
         <Box className="col-span-1 xl:col-span-2 xl:row-span-4 min-h-[20vh] md:min-h-0 xl:min-h-0">

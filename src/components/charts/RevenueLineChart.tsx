@@ -1,95 +1,144 @@
 'use client'; // TODO use client is just because of the valueFormatters , can try to narrow
 
-// TODO adapt to have a switch between Monthly and Yearly, right now only has Monthly
-
 import { Coordinates, formatEuros, mean, regression } from '@/lib/utils';
-import { MonthlyRevenue } from '@/types/companyData';
+import {
+  RevenueData,
+  MonthlyRevenue,
+  YearlyRevenue,
+} from '@/types/companyData';
 
 import { LineChart } from '@mui/x-charts/LineChart';
-import { useMemo } from 'react';
+import { useMemo, useState } from 'react';
+import { Box, ToggleButton, ToggleButtonGroup } from '@mui/material';
 
 type RevenueLineChartProps = {
-  data: MonthlyRevenue[];
+  data: RevenueData;
+};
+
+// Helper function to process data (outside of component to keep it pure)
+const processChartData = (rawData: MonthlyRevenue[] | YearlyRevenue[]) => {
+  const coordinates: Coordinates[] = rawData.map((item, i) => ({
+    x: i,
+    y: item.euros,
+  }));
+
+  const trendLine = regression(coordinates);
+  const dataMean = mean(rawData.map((rev) => rev.euros));
+
+  return rawData.map((item, i) => ({
+    ...item,
+    trend: trendLine[i].y,
+    mean: dataMean,
+  }));
 };
 
 export default function RevenueLineChart({ data }: RevenueLineChartProps) {
-  // Combine all data transformation in one memoized block
-  const mergedChartData = useMemo(() => {
-    // We use the index (i) as 'x' because months are categorical/sequential
-    const coordinates: Coordinates[] = data.map((item, i) => ({
-      x: i,
-      y: item.euros,
-    }));
+  const [view, setView] = useState<'monthly' | 'yearly'>('monthly');
 
-    // Merge trend into data
-    const trendLine = regression(coordinates);
-    const mergedTrendData = data.map((item, i) => ({
-      ...item,
-      trend: trendLine[i].y,
-    }));
+  const handleViewChange = (
+    event: React.MouseEvent<HTMLElement>,
+    newView: 'monthly' | 'yearly' | null
+  ) => {
+    if (newView !== null) {
+      setView(newView);
+    }
+  };
 
-    // Merge mean into data
-    const dataMean = mean(data.map((rev) => rev.euros));
-    const mergedMeanAndTrendData = mergedTrendData.map((item) => ({
-      ...item,
-      mean: dataMean,
-    }));
+  // Optimizaton: Memoize both datasets independently.
+  const monthlyChartData = useMemo(
+    () => processChartData(data.monthly),
+    [data.monthly]
+  );
+  const yearlyChartData = useMemo(
+    () => processChartData(data.yearly),
+    [data.yearly]
+  );
 
-    return mergedMeanAndTrendData;
-  }, [data]);
+  const currentYear = data.yearly.at(-1)?.year;
+
+  const activeData = view === 'monthly' ? monthlyChartData : yearlyChartData;
+  const dataKey = view === 'monthly' ? 'month' : 'year';
 
   return (
-    <LineChart
-      dataset={mergedChartData}
-      xAxis={[
-        {
-          scaleType: 'point',
-          dataKey: 'month',
-        },
-      ]}
-      series={[
-        {
-          dataKey: 'euros',
-          label: 'Monthly Revenue',
-          color: '#02b2af',
-          showMark: false, // Cleaner look without dots on every point
-          curve: 'linear',
-          area: false,
-          valueFormatter: (value: number | null) => formatEuros(value, 'n'),
-        },
-        {
-          dataKey: 'trend',
-          label: 'Trend',
-          color: 'blue', // TODO Distinct color for trend
-          showMark: false, // Cleaner look without dots on every point
-          curve: 'linear',
-          disableHighlight: true, // Not interactable
-          valueFormatter: (value: number | null) => formatEuros(value, 'n'),
-        },
-        {
-          dataKey: 'mean',
-          label: 'Mean',
-          color: 'rgba(255, 0, 0, 0.15)', // TODO distinct color for mean
-          showMark: false, // Cleaner look without dots on every point
-          curve: 'linear',
-          disableHighlight: true, // Not interactable
-          area: true,
-          valueFormatter: (value: number | null) => formatEuros(value, 'n'),
-        },
-      ]}
-      yAxis={[
-        {
-          label: 'Revenue (€)',
-          valueFormatter: (value: number) => formatEuros(value, 'k', 0),
-        },
-      ]}
-      grid={{ horizontal: true }}
-      slotProps={{
-        legend: {
-          position: { vertical: 'top', horizontal: 'end' },
-          direction: 'horizontal',
-        },
-      }}
-    />
+    <Box className="h-full w-full relative">
+      {/* View Switcher */}
+      <Box className="absolute top-0 left-1/2 -translate-x-1/2 z-10 h-[5%]">
+        <ToggleButtonGroup
+          value={view}
+          exclusive
+          onChange={handleViewChange}
+          aria-label="revenue view switch"
+          size="small"
+          color="primary"
+          sx={{
+            bgcolor: 'background.paper',
+            boxShadow: 1,
+            height: '100%',
+          }}
+        >
+          <ToggleButton value="yearly">Yearly</ToggleButton>
+          <ToggleButton value="monthly">
+            {currentYear || 'Monthly'}
+          </ToggleButton>
+        </ToggleButtonGroup>
+      </Box>
+
+      {/* Chart */}
+      <LineChart
+        // key={view} forces a remount of the chart component on toggle,
+        // this makes it so the toggle causes the erase + redraw animation.
+        key={view}
+        dataset={activeData}
+        xAxis={[
+          {
+            scaleType: 'point',
+            dataKey: dataKey,
+          },
+        ]}
+        series={[
+          {
+            dataKey: 'euros',
+            label: `${view === 'monthly' ? 'Monthly' : 'Yearly'} Revenue`,
+            color: '#02b2af',
+            showMark: false,
+            curve: 'linear',
+            area: false,
+            valueFormatter: (value: number | null) => formatEuros(value, 'n'),
+          },
+          {
+            dataKey: 'trend',
+            label: 'Trend',
+            color: 'blue', // TODO Distinct color for trend
+            showMark: false,
+            curve: 'linear',
+            disableHighlight: true, // Not interactable
+            valueFormatter: (value: number | null) => formatEuros(value, 'n'),
+          },
+          {
+            dataKey: 'mean',
+            label: 'Mean',
+            color: 'rgba(255, 0, 0, 0.15)', // TODO distinct color for mean
+            showMark: false,
+            curve: 'linear',
+            disableHighlight: true, // Not interactable
+            area: true,
+            valueFormatter: (value: number | null) => formatEuros(value, 'n'),
+          },
+        ]}
+        yAxis={[
+          {
+            label: 'Revenue (€)',
+            valueFormatter: (value: number) => formatEuros(value, 'a', 0),
+          },
+        ]}
+        grid={{ horizontal: true }}
+        slotProps={{
+          legend: {
+            position: { vertical: 'bottom', horizontal: 'center' },
+            direction: 'horizontal',
+          },
+        }}
+      />
+    </Box>
   );
 }

@@ -8,28 +8,55 @@ export function capitalize(str: string) {
 /**
  * Formats the value in euros to an appropriate string like '€Value'
  * @param value the value in euros
- * @param form 'n' is for normal (default), 'k' for thousands
- * @param fractionDigits how many fraction digits to keep (defaults to 2)
+ * @param form 'n' (normal), 'k' (thousands), 'a' (auto-scale: k, M, B)
+ * @param fractionDigits how many fraction digits to keep for Normal/Thousands mode (defaults to 2)
+ * @param autoDigits how many total digits to keep for Auto mode (defaults to 3)
  * @returns the new formatted string if value is not null, else returns empty string ''
  */
 export function formatEuros(
   value: number | null,
-  form: 'n' | 'k' = 'n',
-  fractionDigits: number = 2
+  form: 'n' | 'k' | 'a' = 'n',
+  fractionDigits: number = 2,
+  autoDigits: number = 3
 ): string {
   if (value === null) return '';
 
+  const standardOptions = {
+    maximumFractionDigits: fractionDigits,
+    minimumFractionDigits: fractionDigits,
+  };
+
+  const THOUSAND = 1_000;
+  const MILLION = 1_000_000;
+  const BILLION = 1_000_000_000;
+
   switch (form) {
+    case 'a': {
+      const absValue = Math.abs(value);
+
+      const autoOptions = {
+        maximumSignificantDigits: autoDigits,
+      };
+
+      if (absValue >= BILLION) {
+        return `€${(value / BILLION).toLocaleString(undefined, autoOptions)}B`;
+      } else if (absValue >= MILLION) {
+        return `€${(value / MILLION).toLocaleString(undefined, autoOptions)}M`;
+      } else if (absValue >= THOUSAND) {
+        return `€${(value / THOUSAND).toLocaleString(undefined, autoOptions)}k`;
+      } else {
+        return `€${value.toLocaleString(undefined, autoOptions)}`;
+      }
+    }
+
     case 'k':
-      return `€${(value / 1000).toLocaleString(undefined, {
-        maximumFractionDigits: fractionDigits,
-        minimumFractionDigits: fractionDigits,
-      })}k`;
+      return `€${(value / THOUSAND).toLocaleString(
+        undefined,
+        standardOptions
+      )}k`;
+
     case 'n':
-      return `€${value.toLocaleString(undefined, {
-        maximumFractionDigits: fractionDigits,
-        minimumFractionDigits: fractionDigits,
-      })}`;
+      return `€${value.toLocaleString(undefined, standardOptions)}`;
   }
 }
 
