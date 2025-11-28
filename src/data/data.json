@@ -208,7 +208,7 @@
         },
         {
             "id": "task-j283n",
-            "task": "Renew AWS Reserved Instances",
+            "task": "Renew AWS Instances",
             "date": "2025-12-10",
             "urgency": "Medium",
             "completed": false
