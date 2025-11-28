@@ -68,7 +68,6 @@ export default function RequirementList({
         {headerAction && <div>{headerAction}</div>}
       </div>
 
-      {/* // TODO maybe use SimpleBarReact instead */}
       {/* Scrollable Content Area */}
       <Box
         className="flex-1 overflow-y-auto px-4 pb-4 flex flex-col gap-2"
