@@ -16,6 +16,7 @@
   - [ ] Mandatory reports (taxes, audits, ...).
   - [ ] Necessary documentation for billing processing. 
   - [ ] Important deadlines tracking.
+  - [ ] Preview a client invoice
 
 ## Requirements & Constraints
 
