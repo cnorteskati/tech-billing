@@ -203,31 +203,36 @@
             "id": "task-k192m",
             "task": "Submit Q4 Tax Preview",
             "date": "2025-12-01",
-            "urgency": "High"
+            "urgency": "High",
+            "completed": false
         },
         {
             "id": "task-j283n",
             "task": "Renew AWS Reserved Instances",
             "date": "2025-12-10",
-            "urgency": "Medium"
+            "urgency": "Medium",
+            "completed": false
         },
         {
             "id": "task-h374p",
             "task": "Client Invoicing Cycle",
             "date": "2025-12-15",
-            "urgency": "High"
+            "urgency": "High",
+            "completed": false
         },
         {
             "id": "task-g465q",
             "task": "Update Privacy Policy",
             "date": "2026-01-05",
-            "urgency": "Low"
+            "urgency": "Low",
+            "completed": false
         },
         {
             "id": "task-f556r",
             "task": "Annual Team Review",
             "date": "2026-01-20",
-            "urgency": "Medium"
+            "urgency": "Medium",
+            "completed": true
         }
     ]
 }

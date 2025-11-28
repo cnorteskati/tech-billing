@@ -45,9 +45,10 @@ export type TaskItem = {
   task: string;
   date: string;
   urgency: 'High' | 'Medium' | 'Low';
+  completed: boolean;
 };
 
-// The Root Data Shape
+// The Root Data Type of the company
 export type CompanyData = {
   revenue: RevenueData;
   bills: BillsData;
@@ -56,4 +57,3 @@ export type CompanyData = {
   documentation: DocumentItem[];
   tasks: TaskItem[];
 };
-
