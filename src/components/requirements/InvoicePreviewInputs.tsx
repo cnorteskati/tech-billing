@@ -62,6 +62,7 @@ function InvoicePreviewInputs({
         </TextField>
         <TextField
           label="Amount"
+          type="number"
           size="small"
           value={data.amount}
           onChange={handleAmountChange}
