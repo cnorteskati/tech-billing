@@ -1,6 +1,9 @@
+'use client';
+
 import PieCenterLabel from '@/components/charts/PieCenterLabel';
 import { capitalize } from '@/lib/utils';
 import { BillBreakdown } from '@/types/companyData';
+import { alpha, useTheme } from '@mui/material';
 import { PieValueType } from '@mui/x-charts';
 import { PieChart } from '@mui/x-charts/PieChart';
 
@@ -9,11 +12,13 @@ type BillingPieChartProps = {
 };
 
 export default function BillingPieChart({ data }: BillingPieChartProps) {
+  const theme = useTheme();
+
   const statusColors = {
-    completed: '#10b981', // tailwind emerald-500
-    pending: '#f59e0b', // tailwind amber-500
-    processing: '#3b82f6', // tailwind blue-500
-    canceled: '#f43f5e', // tailwind rose-500
+    completed: alpha(theme.palette.success.light, 0.8),
+    pending: alpha(theme.palette.warning.light, 0.8),
+    processing: alpha(theme.palette.info.light, 0.8),
+    canceled: alpha(theme.palette.error.light, 0.8),
     default: 'grey',
   };
 

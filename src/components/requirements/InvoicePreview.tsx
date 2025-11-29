@@ -1,7 +1,5 @@
 'use client';
 
-// TODO improve css colors etc
-
 import { useState } from 'react';
 import { Box, Divider, Typography, useTheme, Card } from '@mui/material';
 import { Business } from '@mui/icons-material';
@@ -123,11 +121,11 @@ export default function InvoicePreview() {
               </Typography>
               <div className="mt-1 space-y-1">
                 <Typography variant="body2">
-                  <span className="text-gray-500 mr-2">Issued:</span>
+                  <span className="text-gray-400 mr-2">Issued:</span>
                   {new Date().toLocaleDateString()}
                 </Typography>
                 <Typography variant="body2">
-                  <span className="text-gray-500 mr-2">Due:</span>
+                  <span className="text-gray-400 mr-2">Due:</span>
                   {data.dueDate}
                 </Typography>
               </div>
@@ -152,14 +150,14 @@ export default function InvoicePreview() {
               <Typography
                 variant="caption"
                 fontWeight="bold"
-                className="col-span-8 uppercase text-gray-500"
+                className="col-span-8 uppercase text-gray-400"
               >
                 Description
               </Typography>
               <Typography
                 variant="caption"
                 fontWeight="bold"
-                className="col-span-4 text-right uppercase text-gray-500"
+                className="col-span-4 text-right uppercase text-gray-400"
               >
                 Amount
               </Typography>
@@ -184,11 +182,11 @@ export default function InvoicePreview() {
           <div className="flex justify-end mt-auto">
             <div className="w-full sm:w-1/2 space-y-2">
               <div className="flex justify-between text-sm">
-                <span className="text-gray-500">Subtotal</span>
+                <span className="text-gray-400">Subtotal</span>
                 <span>{formatCurrency(Number(data.amount))}</span>
               </div>
               <div className="flex justify-between text-sm">
-                <span className="text-gray-500">Tax ({TAX_PERCENT}%)</span>
+                <span className="text-gray-400">Tax ({TAX_PERCENT}%)</span>
                 <span>
                   {formatCurrency((Number(data.amount) * TAX_PERCENT) / 100)}
                 </span>

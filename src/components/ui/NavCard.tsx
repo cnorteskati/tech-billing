@@ -1,7 +1,4 @@
-'use client'; // TODO narrow down
-
-// TODO fix the hardcoded values
-// TODO fix responsivness
+'use client';
 
 import Link from 'next/link';
 import { ElementType } from 'react';
@@ -31,7 +28,6 @@ export default function NavCard({
   const theme = useTheme();
 
   return (
-    // TODO tailwind this
     <Card
       sx={{
         height: '100%',
@@ -40,7 +36,7 @@ export default function NavCard({
         boxShadow: theme.shadows[2],
         transition: 'transform 0.2s, box-shadow 0.2s',
         '&:hover': {
-          transform: 'translateY(-4px)',
+          transform: 'translateY(-1%)',
           boxShadow: theme.shadows[8],
         },
       }}

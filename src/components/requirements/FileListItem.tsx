@@ -89,8 +89,7 @@ export default function FileListItem({
         >
           {title}
         </h4>
-        {/* // TODO change this to use theme color */}
-        <span className="text-xs text-gray-400 font-light capitalize">
+        <span className="text-xs text-gray-500 font-light capitalize">
           {type}
         </span>
       </div>

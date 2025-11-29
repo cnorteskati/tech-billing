@@ -1,4 +1,4 @@
-'use client'; // TODO use client is just because of the valueFormatters , can try to narrow
+'use client';
 
 import { Coordinates, formatEuros, mean, regression } from '@/lib/utils';
 import {
@@ -9,7 +9,13 @@ import {
 
 import { LineChart } from '@mui/x-charts/LineChart';
 import { useMemo, useState } from 'react';
-import { Box, ToggleButton, ToggleButtonGroup } from '@mui/material';
+import {
+  alpha,
+  Box,
+  ToggleButton,
+  ToggleButtonGroup,
+  useTheme,
+} from '@mui/material';
 
 type RevenueLineChartProps = {
   data: RevenueData;
@@ -33,6 +39,7 @@ const processChartData = (rawData: MonthlyRevenue[] | YearlyRevenue[]) => {
 };
 
 export default function RevenueLineChart({ data }: RevenueLineChartProps) {
+  const theme = useTheme();
   const [view, setView] = useState<'monthly' | 'yearly'>('monthly');
 
   const handleViewChange = (
@@ -98,8 +105,8 @@ export default function RevenueLineChart({ data }: RevenueLineChartProps) {
           {
             dataKey: 'euros',
             label: `${view === 'monthly' ? 'Monthly' : 'Yearly'} Revenue`,
-            color: '#02b2af',
-            showMark: false,
+            color: alpha(theme.palette.success.main, 0.8),
+            showMark: true,
             curve: 'linear',
             area: false,
             valueFormatter: (value: number | null) => formatEuros(value, 'n'),
@@ -107,7 +114,7 @@ export default function RevenueLineChart({ data }: RevenueLineChartProps) {
           {
             dataKey: 'trend',
             label: 'Trend',
-            color: 'blue', // TODO Distinct color for trend
+            color: alpha(theme.palette.info.main, 0.8),
             showMark: false,
             curve: 'linear',
             disableHighlight: true, // Not interactable
@@ -116,7 +123,7 @@ export default function RevenueLineChart({ data }: RevenueLineChartProps) {
           {
             dataKey: 'mean',
             label: 'Mean',
-            color: 'rgba(255, 0, 0, 0.15)', // TODO distinct color for mean
+            color: alpha(theme.palette.error.light, 0.25),
             showMark: false,
             curve: 'linear',
             disableHighlight: true, // Not interactable

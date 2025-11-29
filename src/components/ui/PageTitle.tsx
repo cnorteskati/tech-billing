@@ -3,8 +3,6 @@ type PageTitleProps = {
   description: string;
 };
 
-// TODO make the text color be secondalry instead of hardcoded
-
 function PageTitle({ title, description }: PageTitleProps) {
   return (
     <header className="mb-8 text-center xl:text-left">

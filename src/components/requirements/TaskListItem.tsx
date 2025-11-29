@@ -38,8 +38,6 @@ export default function TaskItem({
         return theme.palette.warning;
       case 'Low':
         return theme.palette.success;
-      default:
-        return theme.palette.text;
     }
   };
 
@@ -84,7 +82,7 @@ export default function TaskItem({
 
       {/* Left Content: Title and Date */}
       <div className="flex items-start gap-3 z-0 mb-2 sm:mb-0">
-        <div className="mt-0.5 text-gray-400">
+        <div className="mt-0.5 text-gray-500">
           <CalendarMonth fontSize="small" />
         </div>
         <div>

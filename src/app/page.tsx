@@ -22,7 +22,7 @@ const widgetStyles = {
   borderRadius: 4,
   border: '1px solid',
   borderColor: 'divider',
-  boxShadow: '0px 2px 12px rgba(0, 0, 0, 0.04)', // TODO maybe change Subtle custom shadow
+  boxShadow: 1,
   p: { xs: 0, md: 1, lg: 2 },
 };
 

@@ -1,6 +1,7 @@
-'use client'; // TODO see if its possible to narrow down
+'use client';
 
 import { ActiveUser } from '@/types/companyData';
+import { alpha, useTheme } from '@mui/material';
 import { BarChart } from '@mui/x-charts/BarChart';
 
 type ActiveUsersBarChartProps = {
@@ -10,6 +11,8 @@ type ActiveUsersBarChartProps = {
 export default function ActiveUsersBarChart({
   data,
 }: ActiveUsersBarChartProps) {
+  const theme = useTheme();
+
   return (
     <BarChart
       dataset={data}
@@ -23,7 +26,7 @@ export default function ActiveUsersBarChart({
         {
           dataKey: 'count',
           label: 'Active Users',
-          color: '#02b2af',
+          color: alpha(theme.palette.info.main, 0.8),
           valueFormatter: (value) => value?.toLocaleString() || '',
           highlightScope: { highlight: 'item' },
         },
