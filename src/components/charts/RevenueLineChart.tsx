@@ -71,7 +71,6 @@ export default function RevenueLineChart({ data }: RevenueLineChartProps) {
           size="small"
           color="primary"
           sx={{
-            bgcolor: 'background.paper',
             boxShadow: 1,
             height: '100%',
           }}
