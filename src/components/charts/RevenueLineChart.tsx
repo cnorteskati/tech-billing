@@ -40,7 +40,7 @@ const processChartData = (rawData: MonthlyRevenue[] | YearlyRevenue[]) => {
 
 export default function RevenueLineChart({ data }: RevenueLineChartProps) {
   const theme = useTheme();
-  const [view, setView] = useState<'monthly' | 'yearly'>('monthly');
+  const [view, setView] = useState<'monthly' | 'yearly'>('yearly');
 
   const handleViewChange = (
     event: React.MouseEvent<HTMLElement>,

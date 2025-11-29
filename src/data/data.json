@@ -3,54 +3,126 @@
         "monthly": [
             {
                 "month": "Jan",
-                "euros": 65000
+                "euros": 95992
             },
             {
                 "month": "Feb",
-                "euros": 59000
+                "euros": 87131
             },
             {
                 "month": "Mar",
-                "euros": 80000
+                "euros": 118143
             },
             {
                 "month": "Apr",
-                "euros": 81000
+                "euros": 119620
             },
             {
                 "month": "May",
-                "euros": 56000
+                "euros": 82700
             },
             {
                 "month": "Jun",
-                "euros": 55000
+                "euros": 81224
             },
             {
                 "month": "Jul",
-                "euros": 40000
+                "euros": 59072
             },
             {
                 "month": "Aug",
-                "euros": 72000
+                "euros": 106329
             },
             {
                 "month": "Sep",
-                "euros": 95000
+                "euros": 140295
             },
             {
                 "month": "Oct",
-                "euros": 110000
+                "euros": 162447
             },
             {
                 "month": "Nov",
-                "euros": 105000
+                "euros": 155063
             },
             {
                 "month": "Dec",
-                "euros": 130000
+                "euros": 191984
             }
         ],
         "yearly": [
+            {
+                "year": "2003",
+                "euros": 252000
+            },
+            {
+                "year": "2004",
+                "euros": 197000
+            },
+            {
+                "year": "2005",
+                "euros": 148000
+            },
+            {
+                "year": "2006",
+                "euros": 393000
+            },
+            {
+                "year": "2007",
+                "euros": 188000
+            },
+            {
+                "year": "2008",
+                "euros": 309000
+            },
+            {
+                "year": "2009",
+                "euros": 343000
+            },
+            {
+                "year": "2010",
+                "euros": 333000
+            },
+            {
+                "year": "2011",
+                "euros": 427000
+            },
+            {
+                "year": "2012",
+                "euros": 674000
+            },
+            {
+                "year": "2013",
+                "euros": 435000
+            },
+            {
+                "year": "2014",
+                "euros": 638000
+            },
+            {
+                "year": "2015",
+                "euros": 721000
+            },
+            {
+                "year": "2016",
+                "euros": 723000
+            },
+            {
+                "year": "2017",
+                "euros": 390000
+            },
+            {
+                "year": "2018",
+                "euros": 410000
+            },
+            {
+                "year": "2019",
+                "euros": 1003000
+            },
+            {
+                "year": "2020",
+                "euros": 720000
+            },
             {
                 "year": "2021",
                 "euros": 800000
