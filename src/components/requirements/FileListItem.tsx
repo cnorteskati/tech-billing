@@ -11,6 +11,7 @@ interface FileListItemProps {
 }
 
 const SUCCESS_SOUND_URL = '/sounds/success.wav';
+const CLICK_SOUND_URL = '/sounds/click.wav';
 
 export default function FileListItem({
   id,
@@ -22,6 +23,7 @@ export default function FileListItem({
   const theme = useTheme();
 
   const playSuccess = useSound(SUCCESS_SOUND_URL);
+  const playClick = useSound(CLICK_SOUND_URL);
 
   const colorKey = type === 'report' ? 'success' : 'info';
   const mainColor = theme.palette[colorKey].main;
@@ -31,6 +33,8 @@ export default function FileListItem({
   const handleToggle = () => {
     if (!completed) {
       playSuccess();
+    } else {
+      playClick();
     }
     onToggle(id);
   };

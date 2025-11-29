@@ -14,6 +14,7 @@ interface TaskItemProps {
 }
 
 const SCRIBBLE_SOUND_URL = '/sounds/scribble.wav';
+const CLICK_SOUND_URL = '/sounds/click.wav';
 
 export default function TaskItem({
   id,
@@ -25,7 +26,8 @@ export default function TaskItem({
 }: TaskItemProps) {
   const theme = useTheme();
 
-  const playScribble = useSound(SCRIBBLE_SOUND_URL, { start: 0.5 , end: 1});
+  const playScribble = useSound(SCRIBBLE_SOUND_URL, { start: 0.5, end: 1 });
+  const playClick = useSound(CLICK_SOUND_URL);
 
   // Map Urgency to Theme Palette colors
   const getUrgencyColor = (level: UrgencyLevel) => {
@@ -49,6 +51,8 @@ export default function TaskItem({
   const handleToggle = () => {
     if (!completed) {
       playScribble();
+    } else {
+      playClick();
     }
     onToggle(id);
   };
