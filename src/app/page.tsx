@@ -34,32 +34,32 @@ async function HomePage() {
   ]);
 
   return (
-    <Box className="flex flex-col w-full xl:w-[85%] h-auto xl:h-[90%] mx-auto p-4 md:p-10">
+    <Box className="flex flex-col max-w-[90%] min-h-[90%] mx-auto p-4 md:p-10">
       <PageTitle title="Dashboard" description={HOME_PAGE_DESCRIPTION} />
 
       <Box className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-7 xl:grid-rows-8 gap-6 mt-8 h-full">
         <Card
-          className="col-span-1 xl:col-span-4 xl:row-span-4 min-h-[50vh] md:min-h-[40vh] xl:min-h-0"
+          className="col-span-1 xl:col-span-4 xl:row-span-4 min-h-[50vh] md:min-h-0 xl:min-h-0"
           sx={widgetStyles}
         >
           <ActiveUsersBarChart data={activeUsersData} />
         </Card>
 
         <Card
-          className="col-span-1 xl:col-span-3 xl:row-span-4 min-h-[50vh] md:min-h-[40vh] xl:min-h-0"
+          className="col-span-1 xl:col-span-3 xl:row-span-4 min-h-[50vh] md:min-h-0 xl:min-h-0"
           sx={widgetStyles}
         >
           <BillingPieChart data={billsData.breakdown} />
         </Card>
 
         <Card
-          className="col-span-1 md:col-span-1 xl:col-span-5 xl:row-span-4 min-h-[50vh] md:min-h-[40vh] xl:min-h-0"
+          className="col-span-1 md:col-span-1 xl:col-span-5 xl:row-span-4 min-h-[50vh] md:min-h-0 xl:min-h-0"
           sx={widgetStyles}
         >
           <RevenueLineChart data={revenueData} />
         </Card>
 
-        <Box className="col-span-1 xl:col-span-2 xl:row-span-4 min-h-[20vh] md:min-h-0 xl:min-h-0">
+        <Box className="col-span-1 xl:col-span-2 xl:row-span-4 min-h-[30vh] md:min-h-0 xl:min-h-0">
           <NavCard
             href="/reports"
             title="Go to tasks!"
