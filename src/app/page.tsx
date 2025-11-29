@@ -7,9 +7,15 @@ import { Box } from '@mui/material';
 import NavCard from '@/components/ui/NavCard';
 import PageTitle from '@/components/ui/PageTitle';
 import { REPORTS_PAGE_DESCRIPTION } from '@/app/reports/page';
+import { Metadata } from 'next';
 
 export const HOME_PAGE_DESCRIPTION =
   'Track data and analytics with an intuitive and simple visualization.';
+
+export const metadata: Metadata = {
+  title: 'Dashboard | Tech Billing',
+  description: HOME_PAGE_DESCRIPTION,
+};
 
 async function HomePage() {
   const [billsData, revenueData, activeUsersData] = await Promise.all([

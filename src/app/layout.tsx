@@ -17,7 +17,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Tech Billing',
+  title: {
+    template: '%s | Tech Billing',
+    default: 'Tech Billing',
+  },
   description: "Tech Billing's website",
 };
 

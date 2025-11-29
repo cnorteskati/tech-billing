@@ -8,9 +8,15 @@ import DeadlinesList from '@/components/requirements/DeadlinesList';
 import DocsList from '@/components/requirements/DocsList';
 import ReportsList from '@/components/requirements/ReportsList';
 import InvoicePreview from '@/components/requirements/InvoicePreview';
+import { Metadata } from 'next';
 
 export const REPORTS_PAGE_DESCRIPTION =
   'Check mandatory reports, documentation, and critical deadlines.';
+
+export const metadata: Metadata = {
+  title: 'Reports',
+  description: REPORTS_PAGE_DESCRIPTION,
+};
 
 async function ReportsPage() {
   const [tasksData, docsData, reportsData] = await Promise.all([
