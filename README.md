@@ -20,11 +20,11 @@
 
 ## Requirements & Constraints
 
-- [ ] Responsive website (Desktop, Tablet, Mobile).
+- [x] Responsive website (Desktop, Tablet, Mobile).
 - [x] Modular React (Component separation).
 - [x] Use NextJS
 - [x] \[Optional\] Use Tailwind
-- [ ] Use Hooks and ContextAPI (for global state).
+- [x] Use Hooks and ContextAPI (for global state).
 - [x] Generate Mockup data for the company (simple JSON file or served from mock backend).
 - [x] Appealing UI/UX (MUI, ...).
 - [x] Good file structure.
@@ -36,10 +36,10 @@
 - [x] The website should be focused on internal company users.
 - [x] Create a Logo for the company and use in website.
 - [x] Implement Dark/Light mode.
-- [ ] Provide good **SEO metadata** for the **pages** and **website**.
-- [ ] Optimize the balance between SSR and client side, to mantain good
+- [x] Provide good **SEO metadata** for the **pages** and **website**.
+- [x] Optimize the balance between SSR and client side, to mantain good
  user interactivity, SEO, and caching/speed (focus on what data changes regularly, ...).
-- [ ] Add sound to some interactions.
+- [x] Add sound to some interactions.
 - [x] \[Optional\] Have some micro interactions, to keep the website engaging.
 - [ ] \[Optional\] Have graph data be dynamic, and have **WebHooks** to
  notify/update it on the user side.
